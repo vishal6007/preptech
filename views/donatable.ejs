@@ -1,0 +1,35 @@
+<%- include('partials/header'); -%>
+
+<style>
+.h3 {
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+}
+
+.p3 {
+  font-family: 'Brush Script MT', cursive;
+}
+</style>
+
+<%if (response.items.length!=0) {%>
+  
+  <ul class="items">
+    <%for(var i=0;i<response.items.length;i++){%>
+      <li class="item">
+        <%console.log(response.items[i].id)%>
+        <a href="/viewitem?id=<%= response.items[i].id %>">
+        <h3 class="h3"><b><u><%=response.items[i].name%> </u></b></h3>
+        </a>
+        <!-- <p> <b>Description</b> = <%=response.items[i].description%></p> -->
+        <p class="p3"><a href=<%=response.items[i].address%> ><b>Youtube URL</b></a></p>
+        <p><b>Prerequisite</b> - <%=response.items[i].prerequisite%></p>
+        <p><b>Date Posted</b> - <%=response.items[i].date.getDate()%>/<%=1+response.items[i].date.getMonth()%>/<%=response.items[i].date.getFullYear()%></p>
+        
+      </li>
+
+    <%}%>
+  </ul>
+
+<%}%>
+
+<%- include('partials/footer'); -%>

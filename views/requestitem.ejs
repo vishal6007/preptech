@@ -1,0 +1,20 @@
+<%- include('partials/header'); -%>
+
+<form action="/requestitem" method="post">
+    <label for="name">Item Name</label>
+    <input type="text" name="name" required>
+    <label for="description">Description</label>
+    <label type="text" name="description" required>
+        <textarea name="description" cols="47" rows="5"></textarea>
+    </label>
+    <label for="address">Address</label>
+    <input type="text" name="address" required>
+    <label for="prerequisite">Prerequisite</label>
+    <input type="text" name="prerequisite" required>
+    <label for="postedBy">Posted By</label>
+    <input type="text" name="postedBy" value=<%= user.email %> readonly>
+    <button>Request It</button>
+</form>
+
+
+<%- include('partials/footer'); -%>

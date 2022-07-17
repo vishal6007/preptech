@@ -1,0 +1,28 @@
+<%- include('partials/header'); -%>
+
+
+<%if (response.items.length!=0) {%>
+  
+  <ul class="items">
+    <% for(var i=0;i<response.items.length;i++){ %>
+      <li class="item">
+          <h3 style="color: blaCK;"><%=response.items[i].name%></h3>
+          <!-- <p><b>Description</b> = <%=response.items[i].description.substring(0,60)%>...</p> -->
+          <!-- <p><b>Youtube URL</b> = <%=response.items[i].address%></p> -->
+          <p><b>Prerequisite</b> = <%=response.items[i].prerequisite%></p>
+          <p><b>Date Posted</b> = <%=response.items[i].date.getDate()%>/<%=1+response.items[i].date.getMonth()%>/<%=response.items[i].date.getFullYear()%></p>
+          <!-- <p><%=response.items[i].postedBy%></p> -->
+          <br>
+          <a href="/edititem?key=<%=response.items[i]._id%>" class="btnedit">Edit</a>
+          <a href="/deleteitem?key=<%=response.items[i]._id%>&&postedBy=<%=response.items[i].postedBy%>" class="btndel" >Delete</a>
+      </li>
+      
+
+    <%}%>
+  </ul>
+
+<%}else{%>
+  <h1>You Haven't Posted Any Resources Yet!</h1>
+<%}%>
+
+<%- include('partials/footer'); -%>

@@ -1,0 +1,25 @@
+<%- include('partials/header'); -%>
+<!--
+<%console.log(response)%>
+-->
+<div class="container" style="margin-top:5rem;width:80vw;margin-bottom: 18rem;">    
+        <h1 style="color: #d46728; "><u><%= response.items[0].name%></u></h1>
+        <br>
+        <h5>Prerequisite to understand is <%= response.items[0].prerequisite%></h5>
+        <br>
+        <h2 style="color: #d46728; ">Description</h2>
+        <p style="color: #000000; "> <%= response.items[0].description%></p>
+
+        <br>
+        <h4 style="color: #d46728; ">Video tutorial</h4>
+        <br>
+        <iframe width="560" height="315" src=<%= response.items[0].address%> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <br>
+        <br>
+        <h4 style="color: black;">Posted By</h4>
+        <p style="color: black;"><%= response.items[0].postedBy%></p>
+        <p><%= response.items[0].date%></p>
+</div>
+
+<%- include('partials/footer'); -%>
