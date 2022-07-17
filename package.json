@@ -4,8 +4,7 @@
   "description": "A website to prepare for placements",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
+    "start": "node ./app.js"
   },
   "author": "Ashish Dwivedi",
   "license": "ISC",
