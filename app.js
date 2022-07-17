@@ -22,7 +22,7 @@ app.set('view engine', 'ejs');
 
 // database connection
 // const dbURI=require('./config/keys').MongoURI
-mongoose.connect(process.env.MongoURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
+mongoose.connect(process.env.M_URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
   .then((result) => app.listen(process.env.PORT || 3000))
   .catch((err) => console.log(err));
 
